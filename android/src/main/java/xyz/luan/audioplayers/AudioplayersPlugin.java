@@ -87,6 +87,12 @@ public class AudioplayersPlugin implements MethodCallHandler {
                 player.seek(position);
                 break;
             }
+            case "setRate": {
+                final double rate = call.argument("rate");
+                Logger.getLogger("audioplayers").info("setRate="+rate);
+                player.setRate(rate);
+                break;
+            }
             case "setVolume": {
                 final double volume = call.argument("volume");
                 player.setVolume(volume);
